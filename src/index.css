@@ -1,0 +1,184 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.mapCol{
+  width: 30% !important;
+}
+.mapLabel{
+  border-radius: 5px;
+    padding: 5px;
+    width: 20%;
+    border: 1px solid #dee2e6;
+}
+.dashHeight{
+  /* height: calc(100vh - 54px); */
+}
+.focusBtn{
+  background-color: #292C89 !important;
+  border: none !important;
+  
+}
+p{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.lgBG{
+  background: linear-gradient(90deg, #292C89 0%, #249E5E 100%);
+}
+
+.migration-modal .modal-content {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.transfer-container {
+  position: relative;
+  width: 200px !important;
+  overflow: hidden; /* This will hide dots outside the container */
+}
+
+.transfer-dots {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: moveDotsAcross 2s linear infinite;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #292C89;
+  border-radius: 50%;
+  animation: pulseDot 1s ease-in-out infinite;
+}
+
+@keyframes moveDotsAcross {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 40px); /* Adjust based on dots width */
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+.progress {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.progress-bar-animated {
+  animation: progressAnimation 1s linear infinite;
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+}
+.transfer-container {
+  padding: 20px;
+}
+
+.animation-track {
+  position: relative;
+  width: 150px;
+  height: 20px;
+}
+
+.moving-dots {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  display: flex;
+  gap: 5px;
+  animation: moveDots 2s linear infinite;
+}
+
+.data-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #292C89;
+  border-radius: 50%;
+  animation: pulseDot 1s ease-in-out infinite;
+}
+
+@keyframes moveDots {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150px);
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.data-dot:nth-child(1) { animation-delay: 0s; }
+.data-dot:nth-child(2) { animation-delay: 0.2s; }
+.data-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes progressAnimation {
+  0% {
+    background-position: 40px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.source-box, .target-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
